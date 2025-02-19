@@ -24,14 +24,29 @@ rever = [rev1, rev2, rev3, rev4]
 # You must complete it using a List in a similar manner as a Queue
 def parenCheck(toCheck):
     pseudoQueue = []
+    for i in toCheck:
+        if (i == '('):
+            pseudoQueue.append(i)
+        else:
+            if (len(pseudoQueue) != 0):
+                pseudoQueue.pop()
+            else:
+                return False
 
-    
+    if (len(pseudoQueue) == 0):
+        return True
+    else:
+        return False
     
 # Finish this function
 # You must complete it using a List in a similar manner as a Stack
 def stringReverse(toReverse):
     pseudoStack = []
 
+    for i in range(len(toReverse) - 1, 0, -1):
+        pseudoStack.append(toReverse[i])
+    pseudoStack.append(toReverse[0])
+    print(pseudoStack)
 
 # Time to check some parentheses
 for i in range(6):
